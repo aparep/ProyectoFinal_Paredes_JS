@@ -258,7 +258,7 @@
 
 const input_obj= document.getElementById('ingresar-objetivo');
 const input_peso= document.getElementById('ingresar-peso');
-const input_max= document.getElementById('ingresasr-max');
+const input_max= document.getElementById('ingresar-max');
 const input_min=document.getElementById('ingresar-min')
 const boton_agregar=document.getElementById('boton-agregar')
 const boton_guardar=document.getElementById('boton-guardar')
@@ -268,13 +268,34 @@ function agregarObjetivo() {
     if(input_obj.value){
         //Crear objetivo
         let nuevo_objetivo= document.createElement('div');
-        nuevo_objetivo.classList.add('objetivo');
+        nuevo_objetivo.classList.add('row');
        
-        //texto ingresado por el usuario 
+        //textos ingresados por usuario
 
-        let texto= document.createElement('p');
-        texto.innerText=input_obj.value;
-        nuevo_objetivo.appendChild(texto);
+        let texto_objetivo= document.createElement('div');
+        texto_objetivo.classList.add('col-lg-3')
+        texto_objetivo.innerText=input_obj.value;
+
+        let texto_peso= document.createElement('span');
+        texto_peso.classList.add('col')
+        texto_peso.innerText=input_peso.value;
+
+        let texto_min= document.createElement('span');
+        texto_min.classList.add('col')
+        texto_min.innerText=input_min.value;
+
+        let texto_max= document.createElement('span');
+        texto_max.classList.add('col')
+        texto_max.innerText=input_max.value;
+
+        //agregar el contenedor al nuevo elemento
+
+        nuevo_objetivo.appendChild(texto_objetivo);
+        nuevo_objetivo.appendChild(texto_peso);
+        nuevo_objetivo.appendChild(texto_min);
+        nuevo_objetivo.appendChild(texto_max);
+        
+
 
         //Crear y agregar el contenedor de los iconos
 
