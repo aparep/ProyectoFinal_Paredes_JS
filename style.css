@@ -29,6 +29,17 @@ div.navbar{
     margin-top: 5%;
 }
 
+
+div.objetivo{
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    margin-top: 10px;
+    color: white;
+    background-color: rgb(21, 117, 98);
+
+}
+
 .footerIn {
     height: 8vh;
     margin-top: 20%;

@@ -268,7 +268,8 @@ function agregarObjetivo() {
     if(input_obj.value){
         //Crear objetivo
         let nuevo_objetivo= document.createElement('div');
-        nuevo_objetivo.classList.add('objetivo')
+        nuevo_objetivo.classList.add('objetivo');
+       
         //texto ingresado por el usuario 
 
         let texto= document.createElement('p');
@@ -279,6 +280,25 @@ function agregarObjetivo() {
 
         let iconos=document.createElement('div');
         iconos.classList.add('iconos');
-        nuevo_objetivo.appendChild(iconos)
+        nuevo_objetivo.appendChild(iconos);
+
+        //iconos
+
+        let editar=document.createElement('i');
+        editar.classList.add('bi','bi-pencil-fill','icono-editar');
+
+        let eliminar=document.createElement('i');
+        eliminar.classList.add('bi','bi-trash3-fill','icono-eliminar');
+
+        iconos.append(editar,eliminar);
+
+        //Agregar tarea a lista
+
+        lista_objetivos.appendChild(nuevo_objetivo);
+
+    } else{
+        alert('Por favor ingresar una tarea')
     }
 }
+
+boton_agregar.addEventListener('click',agregarObjetivo);
